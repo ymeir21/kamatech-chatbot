@@ -14,7 +14,7 @@ namespace ConsoleApp
 
             for (int i = 0; i < 11120; i++)
             {
-                var result = game1.Execute("", l);
+                var result = game1.Execute("", history);
                 history.Add(result);
             }
         }
