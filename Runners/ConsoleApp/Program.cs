@@ -1,5 +1,9 @@
 ﻿using BasePlugin;
+using BasePlugin.Interfaces;
+using BasePlugin.Records;
+using CountDown;
 using DiceRoller;
+using Infrastructure;
 using System;
 using System.Collections.Generic;
 
@@ -9,14 +13,8 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            var game1 = new DiceRollerPlugin() as IPlugin;
-            var history = new List<PluginOutput>();
-
-            for (int i = 0; i < 11120; i++)
-            {
-                var result = game1.Execute("", history);
-                history.Add(result);
-            }
+            var plugin = new PluginsManager().CreatePlugin(CountDownPlugin._Id);
+            plugin.Execute("", null, null);
         }
     }
 }
