@@ -8,7 +8,7 @@ namespace DiceRoller
     {
         Random rand = new Random();
 
-        public Output Execute(string str, IList<Output> history)
+        public PluginOutput Execute(string str, IList<PluginOutput> history)
         {
             var last1 = 0;
             var last2 = 0;
@@ -29,12 +29,7 @@ namespace DiceRoller
                 dice2 = rand.Next(1, 7);
             } while ((dice1 == last1 && dice2 == last2) || (dice1 == last2 && dice2 == last1));
 
-            var result = new Output
-            {
-                Message = $"You: {dice1} {dice2}",
-                Extra = $"{dice1} {dice2}",
-            };
-
+            var result = new PluginOutput($"You: {dice1} {dice2}", $"{dice1} {dice2}");
             return result;
         }
     }
