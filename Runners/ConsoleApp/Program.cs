@@ -9,7 +9,7 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            var game1 = new DiceRollerPlugin();
+            var game1 = new DiceRollerPlugin() as IPlugin;
             var history = new List<PluginOutput>();
 
             for (int i = 0; i < 11120; i++)
