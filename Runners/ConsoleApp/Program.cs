@@ -15,6 +15,7 @@ namespace ConsoleApp
         {
             var plugin = new PluginsManager().CreatePlugin(CountDownPlugin._Id);
             plugin.Execute("", null, null);
+
         }
     }
 }
