@@ -1,4 +1,6 @@
 ﻿using BasePlugin;
+using BasePlugin.Interfaces;
+using BasePlugin.Records;
 using DiceRoller;
 using System;
 using System.Collections.Generic;
@@ -14,7 +16,7 @@ namespace ConsoleApp
 
             for (int i = 0; i < 11120; i++)
             {
-                var result = game1.Execute("", history);
+                var result = game1.Execute("", history, null);
                 history.Add(result);
             }
         }

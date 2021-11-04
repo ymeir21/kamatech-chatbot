@@ -1,4 +1,6 @@
 ﻿using BasePlugin;
+using BasePlugin.Interfaces;
+using BasePlugin.Records;
 using System;
 using System.Collections.Generic;
 
@@ -8,14 +10,14 @@ namespace DiceRoller
     {
         Random rand = new Random();
 
-        public PluginOutput Execute(string str, IList<PluginOutput> history)
+        public PluginOutput Execute(string str, IList<PluginOutput> pluginHistory, ICallbacks callbacks)
         {
             var last1 = 0;
             var last2 = 0;
 
-            if (history.Count > 0)
+            if (pluginHistory.Count > 0)
             {
-                var res = history[history.Count - 1].Extra.Split(' ');
+                var res = pluginHistory[pluginHistory.Count - 1].Extra.Split(' ');
                 last1 = int.Parse(res[0]);
                 last2 = int.Parse(res[1]);
             }
