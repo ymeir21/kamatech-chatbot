@@ -15,7 +15,9 @@ namespace CountDown
         public static string _Id = "count-down";
         public string Id => _Id;
 
-        public PluginOutput Execute(string str, IList<PluginOutput> pluginHistory, ICallbacks callbacks)
+        public bool CanExecute(string input, string session) => true;
+
+        public PluginOutput Execute(string input, string session, ICallbacks callbacks)
         {
             Console.WriteLine("Firing.");
             _scheduler.Schedule(TimeSpan.FromSeconds(5), Id, "");

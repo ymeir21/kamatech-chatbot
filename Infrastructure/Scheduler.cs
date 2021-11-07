@@ -16,10 +16,10 @@ namespace Infrastructure
 
         public void Schedule(TimeSpan ts, string pluginId, string data)
         {
-            Schedule1(ts, pluginId, data);
+            _ = _Schedule(ts, pluginId, data);
         }
 
-        public async Task Schedule1(TimeSpan ts, string pluginId, string data)
+        private async Task _Schedule(TimeSpan ts, string pluginId, string data)
         {
             await Task.Delay(ts);
             var plugin = (IPluginWithScheduler)_pluginsManager.CreatePlugin(pluginId);
