@@ -21,17 +21,18 @@ namespace CountDown
             { 
                 _scheduler.Schedule(TimeSpan.FromSeconds(1), "");
                 return new PluginOutput("Countdown started.", null);
-             }else { 
-             try
-            {
-                    var interval = Int32.Parse(input);
-                    _scheduler.Schedule(TimeSpan.FromSeconds(interval), "");
-                    return new PluginOutput("Countdown started.", null);
              }
-        catch (FormatException)
-        {
-            return new PluginOutput("Countdown failed, string input nust represent vaild seconds.", null);
-        }
+            else { 
+                 try
+                {
+                  var interval = Int32.Parse(input);
+                  _scheduler.Schedule(TimeSpan.FromSeconds(interval), "");
+                  return new PluginOutput("Countdown started.", null);
+                }
+                catch (FormatException)
+                {
+                  return new PluginOutput("Countdown failed, string input nust represent vaild seconds.", null);
+                }
             }
         }
     }
