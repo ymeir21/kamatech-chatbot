@@ -1,4 +1,5 @@
 ﻿using BasePlugin.Interfaces;
+using BasePlugin.Records;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,13 +16,14 @@ namespace Infrastructure
 
         public void Schedule(TimeSpan ts, string pluginId, string data)
         {
-            /// TODO:
-            /// 1. Start a timer
-            /// 1. When timer fires, Create a plugin instance (with plugin manager)
-            /// 2. Add some function to the interface (IPluginWithScheduler)
-            /// 3. Call the function :)
+            Schedule1(ts, pluginId, data);
+        }
 
-            throw new NotImplementedException("You guys should implement this");
+        public async Task Schedule1(TimeSpan ts, string pluginId, string data)
+        {
+            await Task.Delay(ts);
+            var plugin = (IPluginWithScheduler)_pluginsManager.CreatePlugin(pluginId);
+            plugin.OnScheduler(data);
         }
     }
 }

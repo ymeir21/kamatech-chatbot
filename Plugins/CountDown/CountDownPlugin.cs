@@ -17,8 +17,14 @@ namespace CountDown
 
         public PluginOutput Execute(string str, IList<PluginOutput> pluginHistory, ICallbacks callbacks)
         {
-            _scheduler.Schedule(TimeSpan.FromSeconds(1), Id, "");
+            Console.WriteLine("Firing.");
+            _scheduler.Schedule(TimeSpan.FromSeconds(5), Id, "");
             return new PluginOutput("Countdown started.", null);
+        }
+
+        public void OnScheduler(string data)
+        {
+            Console.WriteLine("Fired.");
         }
     }
 }
