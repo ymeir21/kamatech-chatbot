@@ -15,7 +15,7 @@ namespace Infrastructure
 
         public void Schedule(TimeSpan ts, string data)
         {
-            throw new NotImplementedException("You guys should implement this");
+            ;
         }
     }
 }
