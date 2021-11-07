@@ -1,4 +1,4 @@
 ﻿namespace BasePlugin.Records
 {
-    public record PluginOutput(string Message, string Extra);
+    public record PluginOutput(string Message, string Session);
 }

@@ -6,6 +6,7 @@ using DiceRoller;
 using Infrastructure;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ConsoleApp
 {
@@ -15,6 +16,8 @@ namespace ConsoleApp
         {
             var plugin = new PluginsManager().CreatePlugin(CountDownPlugin._Id);
             plugin.Execute("", null, null);
+            Console.WriteLine("Press any key to continue.");
+            Console.ReadKey();
         }
     }
 }
