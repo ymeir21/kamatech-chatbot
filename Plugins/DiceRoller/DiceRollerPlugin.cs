@@ -40,7 +40,7 @@ namespace DiceRoller
             } while ((dice1 == last1 && dice2 == last2) || (dice1 == last2 && dice2 == last1));
 
             var ses = new Session(dice1, dice2);
-            var result = new PluginOutput($"You: {dice1} {dice2}", JsonSerializer.Serialize(session));
+            var result = new PluginOutput($"You: {dice1} {dice2}", JsonSerializer.Serialize(ses));
             return result;
         }
     }
