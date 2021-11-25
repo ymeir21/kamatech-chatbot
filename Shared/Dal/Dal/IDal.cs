@@ -15,5 +15,6 @@ namespace Dal
         string LoadData(string userData, string pluginId);
     }
     
+    
 }
 
