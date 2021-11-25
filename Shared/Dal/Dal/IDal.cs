@@ -14,5 +14,6 @@ namespace Dal
         /// <param name="userData">Phone number etc.</param>
         string LoadData(string userData, string pluginId);
     }
+    
 }
 
